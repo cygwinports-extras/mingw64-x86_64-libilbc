@@ -1,0 +1,17 @@
+CROSS_HOST="x86_64-w64-mingw32"
+GIT_URI="git://github.com/dekkers/libilbc.git"
+GIT_TAG=upstream/${VERSION}
+inherit cross git cmake
+
+NAME="mingw64-x86_64-libilbc"
+VERSION=1.1.1
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Internet Low Bit Rate codec for Win64 toolchain"
+DESCRIPTION="This is a packaging friendly copy of the iLBC codec from the
+WebRTC project. It provides a base for distribution packages and can be used
+as a drop-in replacement for the non-free code from RFC 3951."
+HOMEPAGE="http://github.com/dekkers/libilbc"
+
+PATCH_URI="1.1.1-cflags.patch"
+PATCH_URI+=" 1.1.1-install.patch"

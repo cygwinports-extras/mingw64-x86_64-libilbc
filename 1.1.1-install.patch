@@ -1,0 +1,10 @@
+--- origsrc/libilbc/CMakeLists.txt	2013-01-27 20:39:58.000000000 -0600
++++ src/libilbc/CMakeLists.txt	2013-01-27 20:48:45.481818600 -0600
+@@ -35,4 +35,6 @@ set(includedir "\${prefix}/include")
+ configure_file(libilbc.pc.in libilbc.pc @ONLY)
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libilbc.pc DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE}/pkgconfig)
+ install(FILES ilbc/interface/ilbc.h DESTINATION ${CMAKE_INSTALL_PREFIX}/include)
+-install(TARGETS ilbc ilbc-static DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE}/)
++install(TARGETS ilbc ilbc-static LIBRARY DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE}/
++                                 RUNTIME DESTINATION bin
++                                 ARCHIVE DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE}/)
